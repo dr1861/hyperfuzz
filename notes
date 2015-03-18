@@ -3,3 +3,12 @@ Date          Change
 03/17/2015	Added source of valgrind 3.7.0 from debian package repository.
 03/17/2015 	Added source of catchconv
 03/17/2015	Modified /configure.in and ./Makefile.am to include catchconv.
+03/17/2015	Makefile.am uses old-style macros. 
+		Fixed using command:
+				$ fgrep -rlZ pkglib_DATA --include Makefile.am . | xargs -0 sed -i 's/pkglib_DATA/pkgdata_DATA/g'
+						then ran automake -a
+03/18/2015	Modified ca_main.c 
+			added line 96
+			modified line 97
+03/18/2015	`:x
+

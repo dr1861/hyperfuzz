@@ -93,7 +93,8 @@ void ca_read_memregions_from_file(char * path)
 
   // while not EOF
   // read next line
-  while (! VG_(get_line)(val,line,sizeof(line)) )
+  int* lineno = 0;
+  while (! VG_(get_line)(val,line,sizeof(line),&lineno) )
     {
       // parse line 
       // expected format: <regionBase> <space> <regionSize>
@@ -109,6 +110,7 @@ void ca_read_memregions_from_file(char * path)
 
       // declare memory region 
       // MEMORY -  caInsertInterval(regionBase,regionSize,caIntervalTable); 
+	lineno++;
     }
 		  
   return; 

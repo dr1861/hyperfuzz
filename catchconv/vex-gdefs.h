@@ -351,5 +351,15 @@ typedef
 #endif /* ndef __LIBVEX_GUEST_X86_DEFS_H */
 
 /*---------------------------------------------------------------*/
+/*---- patch to make catchconv work.
+/*---------------------------------------------------------------*/
+extern IRExpr** mkIRExprVec_9 ( IRExpr*, IRExpr*, IRExpr*, IRExpr*,
+                                IRExpr*, IRExpr*, IRExpr*, IRExpr*, IRExpr* );
+
+extern IRExpr** mkIRExprVec_10 ( IRExpr*, IRExpr*, IRExpr*, IRExpr*,
+				 IRExpr*, IRExpr*, IRExpr*, IRExpr*, IRExpr*,
+			         IRExpr*);
+
+/*---------------------------------------------------------------*/
 /*--- end                                   guest-x86/gdefs.h ---*/
 /*---------------------------------------------------------------*/
