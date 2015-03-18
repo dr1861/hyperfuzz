@@ -1,3 +1,5 @@
 # notes
 Date          Change
 03/17/2015	Added source of valgrind 3.7.0 from debian package repository.
+03/17/2015 	Added source of catchconv
+03/17/2015	Modified /configure.in and ./Makefile.am to include catchconv.

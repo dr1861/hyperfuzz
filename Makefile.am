@@ -10,7 +10,9 @@ TOOLS =		memcheck \
 		lackey \
 		none \
 		helgrind \
-		drd
+		drd \
+		catchconv \
+		catchconv/docs 
 
 EXP_TOOLS = 	exp-sgcheck \
 		exp-bbv \
