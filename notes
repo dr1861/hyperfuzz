@@ -1,9 +1,3 @@
 # notes
 Date          Change
 03/17/2015	Added source of valgrind 3.7.0 from debian package repository.
-03/17/2015	Added catchconv sources from SmartFuzz github repository.
-03/17/2015	Modified configuration and make files:
-		configure
-		Makefile
-		Makefile.am
-		Makefile.in

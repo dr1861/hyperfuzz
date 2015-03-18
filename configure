@@ -12,9 +12,6 @@
 #
 # This configure script is free software; the Free Software Foundation
 # gives unlimited permission to copy, distribute and modify it.
-#
-#------------------------------------------------------#
-# 03/17/2015 - draikes  --  added hooksto configure catchconv.
 ## -------------------- ##
 ## M4sh Initialization. ##
 ## -------------------- ##
@@ -9997,8 +9994,6 @@ do
     "exp-sgcheck/Makefile") CONFIG_FILES="$CONFIG_FILES exp-sgcheck/Makefile" ;;
     "exp-sgcheck/tests/Makefile") CONFIG_FILES="$CONFIG_FILES exp-sgcheck/tests/Makefile" ;;
     "drd/Makefile") CONFIG_FILES="$CONFIG_FILES drd/Makefile" ;;
-    "catchconv/Makefile") CONFIG_FILES="$CONFIG_FILES catchconv/Makefile" ;;
-    "catchconv/docs/Makefile") CONFIG_FILES="$CONFIG_FILES catchconv/docs/Makefile" ;;
     "drd/scripts/download-and-build-splash2") CONFIG_FILES="$CONFIG_FILES drd/scripts/download-and-build-splash2" ;;
     "drd/tests/Makefile") CONFIG_FILES="$CONFIG_FILES drd/tests/Makefile" ;;
     "exp-bbv/Makefile") CONFIG_FILES="$CONFIG_FILES exp-bbv/Makefile" ;;
