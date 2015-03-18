@@ -1963,7 +1963,7 @@ AC_CONFIG_FILES([
    drd/scripts/download-and-build-splash2
    drd/tests/Makefile
    catchconv/Makefile
-   catchConv/docs/Makefile
+   catchconv/docs/Makefile
    exp-bbv/Makefile
    exp-bbv/tests/Makefile
    exp-bbv/tests/x86/Makefile
