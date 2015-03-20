@@ -1,3 +1,0 @@
-#!/bin/bash
-
-perl $CC_PREFIX/bin/psi-cluster.pl $1 

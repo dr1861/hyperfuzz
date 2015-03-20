@@ -1,3 +1,0 @@
-bt
-disass $pc-32 $pc+32
-info all-registers
