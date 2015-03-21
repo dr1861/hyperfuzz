@@ -3015,6 +3015,8 @@ AC_CONFIG_FILES([
    drd/Makefile
    drd/scripts/download-and-build-splash2
    drd/tests/Makefile
+   catchconv/Makefile
+   catchconv/docs/Makefile
    exp-bbv/Makefile
    exp-bbv/tests/Makefile
    exp-bbv/tests/x86/Makefile
