@@ -1976,6 +1976,39 @@ IRExpr** mkIRExprVec_8 ( IRExpr* arg1, IRExpr* arg2, IRExpr* arg3,
    vec[8] = NULL;
    return vec;
 }
+IRExpr** mkIRExprVec_9 ( IRExpr* arg1, IRExpr* arg2, IRExpr* arg3,
+                         IRExpr* arg4, IRExpr* arg5, IRExpr* arg6,
+                         IRExpr* arg7, IRExpr* arg8, IRExpr* arg9 ) {
+   IRExpr** vec = LibVEX_Alloc(10 * sizeof(IRExpr*));
+   vec[0] = arg1;
+   vec[1] = arg2;
+   vec[2] = arg3;
+   vec[3] = arg4;
+   vec[4] = arg5;
+   vec[5] = arg6;
+   vec[6] = arg7;
+   vec[7] = arg8;
+   vec[8] = arg9;
+   vec[9] = NULL;
+   return vec;
+}
+IRExpr** mkIRExprVec_10 ( IRExpr* arg1, IRExpr* arg2, IRExpr* arg3,
+                         IRExpr* arg4, IRExpr* arg5, IRExpr* arg6,
+			  IRExpr* arg7, IRExpr* arg8, IRExpr* arg9, IRExpr* arg10 ) {
+   IRExpr** vec = LibVEX_Alloc(11 * sizeof(IRExpr*));
+   vec[0] = arg1;
+   vec[1] = arg2;
+   vec[2] = arg3;
+   vec[3] = arg4;
+   vec[4] = arg5;
+   vec[5] = arg6;
+   vec[6] = arg7;
+   vec[7] = arg8;
+   vec[8] = arg9;
+   vec[9] = arg10;
+   vec[10] = NULL;
+   return vec;
+}
 
 
 /* Constructors -- IRDirty */

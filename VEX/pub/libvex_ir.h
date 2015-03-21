@@ -2180,6 +2180,13 @@ extern IRExpr** mkIRExprVec_7 ( IRExpr*, IRExpr*, IRExpr*, IRExpr*,
 extern IRExpr** mkIRExprVec_8 ( IRExpr*, IRExpr*, IRExpr*, IRExpr*,
                                 IRExpr*, IRExpr*, IRExpr*, IRExpr*);
 
+extern IRExpr** mkIRExprVec_9 ( IRExpr*, IRExpr*, IRExpr*, IRExpr*,
+                                IRExpr*, IRExpr*, IRExpr*, IRExpr*, IRExpr* );
+
+extern IRExpr** mkIRExprVec_10 ( IRExpr*, IRExpr*, IRExpr*, IRExpr*,
+				 IRExpr*, IRExpr*, IRExpr*, IRExpr*, IRExpr*,
+			         IRExpr*);
+
 /* IRExpr copiers:
    - shallowCopy: shallow-copy (ie. create a new vector that shares the
      elements with the original).
