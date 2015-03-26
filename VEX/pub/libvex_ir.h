@@ -2,6 +2,7 @@
 /*---------------------------------------------------------------*/
 /*--- begin                                       libvex_ir.h ---*/
 /*---------------------------------------------------------------*/
+// 03/23/2015 -- draikes added Iex_Mux0X to the enums.
 
 /*
    This file is part of Valgrind, a dynamic binary instrumentation
@@ -1893,6 +1894,7 @@ typedef
       Iex_Unop,
       Iex_Load,
       Iex_Const,
+	  Iex_Mux0X,
       Iex_ITE,
       Iex_CCall,
       Iex_VECRET,
@@ -2096,6 +2098,19 @@ struct _IRExpr {
          IRExpr* iftrue;   /* True expression */
          IRExpr* iffalse;  /* False expression */
       } ITE;
+
+      /* A ternary if-then-else operator.  It returns expr0 if cond is
+         zero, exprX otherwise.  Note that it is STRICT, ie. both
+         expr0 and exprX are evaluated in all cases.
+
+         ppIRExpr output: Mux0X(<cond>,<expr0>,<exprX>),
+                         eg. Mux0X(t6,t7,t8)
+      */
+      struct {
+         IRExpr* cond;     /* Condition */
+         IRExpr* expr0;    /* True expression */
+         IRExpr* exprX;    /* False expression */
+      } Mux0X;
    } Iex;
 };
 

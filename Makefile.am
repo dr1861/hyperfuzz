@@ -1,4 +1,4 @@
-
+# 03/26/2015 - draikes - modified to include the catchconv tool folder.
 AUTOMAKE_OPTIONS = foreign 1.10 dist-bzip2
 
 include $(top_srcdir)/Makefile.all.am 
