@@ -1,0 +1,14 @@
+	ca_callbacks.c \
+	ca_interval_dumb.c \
+	ca_main.c \
+	ca_malloc_wrappers.c \
+	cgIRBinop.c \
+	cgIR.c \
+	cgIRCalcCondition.c \
+	cgIRUnop.c \
+	findRepMov.c \
+	isIR.c \
+	ogIR.c \
+	trackmemIR.c \
+	ufInstOgIR.c \
+	ufOgIR.c 

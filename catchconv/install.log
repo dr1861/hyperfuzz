@@ -1,0 +1,34 @@
+mkdir -p ../.in_place; \
+	for f in memcheck-amd64-linux  ; do \
+	  rm -f ../.in_place/$f; \
+	  ln -f -s ../catchconv/$f ../.in_place; \
+	done
+for f in ; do \
+	  if [ ! -e $f.dSYM  -o  $f -nt $f.dSYM ] ; then \
+	      echo "dsymutil $f"; \
+	      dsymutil $f; \
+	  fi; \
+	done
+mkdir -p ../.in_place; \
+	for f in ; do \
+	  rm -f ../.in_place/$f.dSYM; \
+	  ln -f -s ../catchconv/$f.dSYM ../.in_place; \
+	done
+make[1]: Entering directory `/home/dr1861/valgrind2/catchconv'
+/bin/bash /home/dr1861/valgrind2/install-sh -d /home/dr1861/lib/valgrind; \
+	for f in memcheck-amd64-linux ; do \
+	  /usr/bin/install -c $f /home/dr1861/lib/valgrind; \
+	done
+for f in ; do \
+	  if [ ! -e $f.dSYM  -o  $f -nt $f.dSYM ] ; then \
+	      echo "dsymutil $f"; \
+	      dsymutil $f; \
+	  fi; \
+	done
+/bin/bash /home/dr1861/valgrind2/install-sh -d /home/dr1861/lib/valgrind; \
+	for f in ; do \
+	  cp -R $f.dSYM /home/dr1861/lib/valgrind; \
+	done
+ /bin/mkdir -p '/home/dr1861/include/valgrind'
+ /usr/bin/install -c -m 644 ca_callbacks.h ca_interval.h ca_malloc_wrappers.h ca_settings.h ca_stats.h catchconv.h ca_vex_util.h cgIR.h findRepMov.h isIR.h macros.h ogIR.h trackmemIR.h ufOgIR.h vex-gdefs.h '/home/dr1861/include/valgrind'
+make[1]: Leaving directory `/home/dr1861/valgrind2/catchconv'

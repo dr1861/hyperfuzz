@@ -1,0 +1,111 @@
+Makefile:	$(CFLAGS) $(catchconv_amd64_linux_LDFLAGS) $(LDFLAGS) -o $@
+Makefile:	$(CFLAGS) $(catchconv_ppc32_linux_LDFLAGS) $(LDFLAGS) -o $@
+Makefile:	$(CFLAGS) $(catchconv_x86_darwin_LDFLAGS) $(LDFLAGS) -o $@
+Makefile:	$(CFLAGS) $(catchconv_x86_linux_LDFLAGS) $(LDFLAGS) -o $@
+Makefile:	$(vgpreload_catchconv_x86_linux_so_LDFLAGS) $(LDFLAGS) -o $@
+Makefile:LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+Makefile:LDFLAGS = 
+Makefile:PRELOAD_LDFLAGS_COMMON_LINUX = -nodefaultlibs -shared -Wl,-z,interpose,-z,initfirst
+Makefile:PRELOAD_LDFLAGS_COMMON_AIX5 = -nodefaultlibs -shared -Wl,-G -Wl,-bnogc
+Makefile:PRELOAD_LDFLAGS_COMMON_DARWIN = -dynamic -dynamiclib -all_load
+Makefile:PRELOAD_LDFLAGS_X86_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m32
+Makefile:PRELOAD_LDFLAGS_AMD64_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m64
+Makefile:PRELOAD_LDFLAGS_PPC32_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m32
+Makefile:PRELOAD_LDFLAGS_PPC64_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m64
+Makefile:PRELOAD_LDFLAGS_PPC32_AIX5 = $(PRELOAD_LDFLAGS_COMMON_AIX5)  
+Makefile:PRELOAD_LDFLAGS_PPC64_AIX5 = $(PRELOAD_LDFLAGS_COMMON_AIX5)  
+Makefile:PRELOAD_LDFLAGS_X86_DARWIN = $(PRELOAD_LDFLAGS_COMMON_DARWIN) -arch i386
+Makefile:PRELOAD_LDFLAGS_AMD64_DARWIN = $(PRELOAD_LDFLAGS_COMMON_DARWIN) -arch x86_64
+Makefile:TOOL_LDFLAGS_COMMON_LINUX = -static \
+Makefile:TOOL_LDFLAGS_COMMON_AIX5 = -static -Wl,-e_start_valgrind
+Makefile:TOOL_LDFLAGS_COMMON_DARWIN = -nodefaultlibs -nostartfiles \
+Makefile:TOOL_LDFLAGS_X86_LINUX = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_LINUX) -m32 \
+Makefile:TOOL_LDFLAGS_AMD64_LINUX = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_LINUX) -m64 \
+Makefile:TOOL_LDFLAGS_PPC32_LINUX = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_LINUX) -m32 \
+Makefile:TOOL_LDFLAGS_PPC64_LINUX = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_LINUX) -m64 \
+Makefile:TOOL_LDFLAGS_PPC32_AIX5 = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_AIX5) 
+Makefile:TOOL_LDFLAGS_PPC64_AIX5 = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_AIX5)  -Wl,-bbigtoc
+Makefile:TOOL_LDFLAGS_X86_DARWIN = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_DARWIN) -arch i386 \
+Makefile:TOOL_LDFLAGS_AMD64_DARWIN = \
+Makefile:	$(TOOL_LDFLAGS_COMMON_DARWIN) -arch x86_64 \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_X86_LINUX = \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_AMD64_LINUX = \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_PPC32_LINUX = \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_PPC64_LINUX = \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_PPC32_AIX5 = \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_PPC64_AIX5 = \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_X86_DARWIN = \
+Makefile:LIBREPLACEMALLOC_LDFLAGS_AMD64_DARWIN = \
+Makefile:vgpreload_catchconv_x86_linux_so_LDFLAGS = \
+Makefile:        $(PRELOAD_LDFLAGS_X86_LINUX) \
+Makefile:        $(LIBREPLACEMALLOC_LDFLAGS_X86_LINUX)
+Makefile:catchconv_x86_linux_LDFLAGS = $(TOOL_LDFLAGS_X86_LINUX)
+Makefile:catchconv_amd64_linux_LDFLAGS = $(TOOL_LDFLAGS_AMD64_LINUX)
+Makefile:catchconv_ppc32_linux_LDFLAGS = $(TOOL_LDFLAGS_PPC32_LINUX)
+Makefile:catchconv_x86_darwin_LDFLAGS = $(TOOL_LDFLAGS_X86_DARWIN)
+Makefile.am:vgpreload_catchconv_x86_linux_so_LDFLAGS      = \
+Makefile.am:        $(PRELOAD_LDFLAGS_X86_LINUX) \
+Makefile.am:        $(LIBREPLACEMALLOC_LDFLAGS_X86_LINUX)
+Makefile.am:catchconv_x86_linux_LDFLAGS      = $(TOOL_LDFLAGS_X86_LINUX)
+Makefile.am:catchconv_amd64_linux_LDFLAGS      = $(TOOL_LDFLAGS_AMD64_LINUX)
+Makefile.am:catchconv_ppc32_linux_LDFLAGS      = $(TOOL_LDFLAGS_PPC32_LINUX)
+Makefile.am:catchconv_x86_darwin_LDFLAGS      = $(TOOL_LDFLAGS_X86_DARWIN)
+Makefile.in:	$(CFLAGS) $(catchconv_amd64_linux_LDFLAGS) $(LDFLAGS) -o $@
+Makefile.in:	$(CFLAGS) $(catchconv_ppc32_linux_LDFLAGS) $(LDFLAGS) -o $@
+Makefile.in:	$(CFLAGS) $(catchconv_x86_darwin_LDFLAGS) $(LDFLAGS) -o $@
+Makefile.in:	$(CFLAGS) $(catchconv_x86_linux_LDFLAGS) $(LDFLAGS) -o $@
+Makefile.in:	$(vgpreload_catchconv_x86_linux_so_LDFLAGS) $(LDFLAGS) -o $@
+Makefile.in:LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+Makefile.in:LDFLAGS = @LDFLAGS@
+Makefile.in:PRELOAD_LDFLAGS_COMMON_LINUX = -nodefaultlibs -shared -Wl,-z,interpose,-z,initfirst
+Makefile.in:PRELOAD_LDFLAGS_COMMON_AIX5 = -nodefaultlibs -shared -Wl,-G -Wl,-bnogc
+Makefile.in:PRELOAD_LDFLAGS_COMMON_DARWIN = -dynamic -dynamiclib -all_load
+Makefile.in:PRELOAD_LDFLAGS_X86_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) @FLAG_M32@
+Makefile.in:PRELOAD_LDFLAGS_AMD64_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) @FLAG_M64@
+Makefile.in:PRELOAD_LDFLAGS_PPC32_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) @FLAG_M32@
+Makefile.in:PRELOAD_LDFLAGS_PPC64_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) @FLAG_M64@
+Makefile.in:PRELOAD_LDFLAGS_PPC32_AIX5 = $(PRELOAD_LDFLAGS_COMMON_AIX5)  @FLAG_MAIX32@
+Makefile.in:PRELOAD_LDFLAGS_PPC64_AIX5 = $(PRELOAD_LDFLAGS_COMMON_AIX5)  @FLAG_MAIX64@
+Makefile.in:PRELOAD_LDFLAGS_X86_DARWIN = $(PRELOAD_LDFLAGS_COMMON_DARWIN) -arch i386
+Makefile.in:PRELOAD_LDFLAGS_AMD64_DARWIN = $(PRELOAD_LDFLAGS_COMMON_DARWIN) -arch x86_64
+Makefile.in:TOOL_LDFLAGS_COMMON_LINUX = -static \
+Makefile.in:TOOL_LDFLAGS_COMMON_AIX5 = -static -Wl,-e_start_valgrind
+Makefile.in:TOOL_LDFLAGS_COMMON_DARWIN = -nodefaultlibs -nostartfiles \
+Makefile.in:TOOL_LDFLAGS_X86_LINUX = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_LINUX) @FLAG_M32@ \
+Makefile.in:TOOL_LDFLAGS_AMD64_LINUX = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_LINUX) @FLAG_M64@ \
+Makefile.in:TOOL_LDFLAGS_PPC32_LINUX = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_LINUX) @FLAG_M32@ \
+Makefile.in:TOOL_LDFLAGS_PPC64_LINUX = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_LINUX) @FLAG_M64@ \
+Makefile.in:TOOL_LDFLAGS_PPC32_AIX5 = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_AIX5) @FLAG_MAIX32@
+Makefile.in:TOOL_LDFLAGS_PPC64_AIX5 = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_AIX5) @FLAG_MAIX64@ -Wl,-bbigtoc
+Makefile.in:TOOL_LDFLAGS_X86_DARWIN = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_DARWIN) -arch i386 \
+Makefile.in:TOOL_LDFLAGS_AMD64_DARWIN = \
+Makefile.in:	$(TOOL_LDFLAGS_COMMON_DARWIN) -arch x86_64 \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_X86_LINUX = \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_AMD64_LINUX = \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_PPC32_LINUX = \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_PPC64_LINUX = \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_PPC32_AIX5 = \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_PPC64_AIX5 = \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_X86_DARWIN = \
+Makefile.in:LIBREPLACEMALLOC_LDFLAGS_AMD64_DARWIN = \
+Makefile.in:vgpreload_catchconv_x86_linux_so_LDFLAGS = \
+Makefile.in:        $(PRELOAD_LDFLAGS_X86_LINUX) \
+Makefile.in:        $(LIBREPLACEMALLOC_LDFLAGS_X86_LINUX)
+Makefile.in:catchconv_x86_linux_LDFLAGS = $(TOOL_LDFLAGS_X86_LINUX)
+Makefile.in:catchconv_amd64_linux_LDFLAGS = $(TOOL_LDFLAGS_AMD64_LINUX)
+Makefile.in:catchconv_ppc32_linux_LDFLAGS = $(TOOL_LDFLAGS_PPC32_LINUX)
+Makefile.in:catchconv_x86_darwin_LDFLAGS = $(TOOL_LDFLAGS_X86_DARWIN)

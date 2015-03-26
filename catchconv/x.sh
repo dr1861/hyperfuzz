@@ -1,0 +1,2 @@
+#!/bin/sh
+gcc -DHAVE_CONFIG_H -I. -I..  -I.. -I../include -I../VEX/pub -I../VEX/pub -DVGA_amd64=1 -DVGO_linux=1 -DVGP_amd64_linux=1 -DVGPV_amd64_linux_vanilla=1  -m64 -O2 -S -O2 -g -std=gnu99 -Wall -Wcast-align -Wmissing-prototypes -Wshadow -Wpointer-arith -Wstrict-prototypes -Wmissing-declarations -Wcast-qual -Wwrite-strings -Wformat -Wformat-security -fno-stack-protector -fno-strict-aliasing -fno-builtin  -fomit-frame-pointer  -MT catchconv_amd64_linux-ca_main.o -MD -MP -MF .deps/catchconv_amd64_linux-ca_main.Tpo -c -o catchconv_amd64_linux-ca_main.o ca_main.c
