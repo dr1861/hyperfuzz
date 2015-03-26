@@ -1,7 +1,7 @@
-# 03/26/2015 - draikes - added definitions for mkExprVec_9 and mkExprVec_10.
 /*---------------------------------------------------------------*/
 /*--- begin                                         ir_defs.c ---*/
 /*---------------------------------------------------------------*/
+// 03/26/2015 - draikes - added definitions for mkExprVec_9 and mkExprVec_10.
 
 /*
    This file is part of Valgrind, a dynamic binary instrumentation

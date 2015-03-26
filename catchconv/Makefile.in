@@ -697,6 +697,8 @@ LIBREPLACEMALLOC_LDFLAGS_MIPS64_LINUX = \
 	-Wl,--no-whole-archive
 
 
+# 03/26/2015 - draikes - fixed to work with the valgrind autotools.
+
 #----------------------------------------------------------------------------
 # Headers
 #----------------------------------------------------------------------------
